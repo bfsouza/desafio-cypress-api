@@ -1,0 +1,29 @@
+node {
+    def imageTag = "peterngtr/rest-demo:${env.BUILD_NUMBER}"
+    def dockerHome = tool 'myDocker'
+
+    environment {     
+      PATH = "/usr/bin/env:/usr/bin:/usr/bin/bash:$PATH"              
+    }
+    
+    stage("Initializing") {
+        cleanWs();
+        checkout scm;
+        sh "git reset --hard"
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
+
+    stage("Building Images") {
+        sh "docker build -t ${imageTag} -f docker/Dockerfile ."
+    }
+
+    stage("Running Tests") {
+        try {
+            sh "jenkins/run-tests.sh ${env.BUILD_NUMBER}"
+        }
+        finally {
+            bat "dir report"
+            allure includeProperties: true, jdk: '', results: [[path: 'report']]
+        }
+    }
+}

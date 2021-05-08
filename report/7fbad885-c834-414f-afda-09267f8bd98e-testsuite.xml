@@ -1,0 +1,160 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1620461740212' stop='1620461750132'>
+    <name>Add User @post</name>
+    <title>Add User @post</title>
+    <test-cases>
+        <test-case start='1620461740212' status='failed' stop='1620461741838'>
+            <name>Add user information {"name":"Kayson Suarez","email":"kaysonsuarez@mail.com","gender":"Male","status":"Active","code":"200","bodyCode":"201","message":"&lt;Empty>"}</name>
+            <title>Add user information {"name":"Kayson Suarez","email":"kaysonsuarez@mail.com","gender":"Male","status":"Active","code":"200","bodyCode":"201","message":"&lt;Empty>"}</title>
+            <labels>
+                <label name='tag' value='@post'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1620461740214' status='failed' stop='1620461741837'>
+                    <name>Given I send POST HTTP request to user api endpoint for "Kayson Suarez", "kaysonsuarez@mail.com", "Male" and "Active" </name>
+                    <title>Given I send POST HTTP request to user api endpoint for "Kayson Suarez", "kaysonsuarez@mail.com", "Male" and "Active" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1620461740214' status='passed' stop='1620461741835'>
+                            <name>I send post request "/users", {"name":"Kayson Suarez","email":"kaysonsuarez@mail.com","gender":"Male","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</name>
+                            <title>I send post request "/users", {"name":"Kayson Suarez","email":"kaysonsuarez@mail.com","gender":"Male","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>expected 422 to sort of equal '201'</message>
+                <stack-trace>Error: expected 422 to sort of equal '201'
+                    at Assertion.assert (C:\Users\320082927\Desktop\code\desafio-cypress-api\node_modules\expect.js\index.js:96:13)
+                    at Assertion.eql (C:\Users\320082927\Desktop\code\desafio-cypress-api\node_modules\expect.js\index.js:230:10)
+                    at C:\Users\320082927\Desktop\code\desafio-cypress-api\step_definitions\steps.js:44:36
+                    at runSteps (C:\Users\320082927\Desktop\code\desafio-cypress-api\node_modules\codeceptjs\lib\interfaces\gherkin.js:58:15)
+                    at processTicksAndRejections (internal/process/task_queues.js:93:5)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1620461741839' status='passed' stop='1620461743463'>
+            <name>Add user information {"name":"Amie Wardle","email":"kaysonsuarez@mail.com","gender":"Female","status":"Active","code":"200","bodyCode":"422","message":"has already been taken"}</name>
+            <title>Add user information {"name":"Amie Wardle","email":"kaysonsuarez@mail.com","gender":"Female","status":"Active","code":"200","bodyCode":"422","message":"has already been taken"}</title>
+            <labels>
+                <label name='tag' value='@post'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1620461741841' status='passed' stop='1620461743463'>
+                    <name>Given I send POST HTTP request to user api endpoint for "Amie Wardle", "kaysonsuarez@mail.com", "Female" and "Active" </name>
+                    <title>Given I send POST HTTP request to user api endpoint for "Amie Wardle", "kaysonsuarez@mail.com", "Female" and "Active" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1620461741841' status='passed' stop='1620461743462'>
+                            <name>I send post request "/users", {"name":"Amie Wardle","email":"kaysonsuarez@mail.com","gender":"Female","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</name>
+                            <title>I send post request "/users", {"name":"Amie Wardle","email":"kaysonsuarez@mail.com","gender":"Female","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1620461743464' status='passed' stop='1620461745113'>
+            <name>Add user information {"name":"&lt;Empty>","email":"thaiscastro@mail.com","gender":"Female","status":"Active","code":"200","bodyCode":"422","message":"can't be blank"}</name>
+            <title>Add user information {"name":"&lt;Empty>","email":"thaiscastro@mail.com","gender":"Female","status":"Active","code":"200","bodyCode":"422","message":"can't be blank"}</title>
+            <labels>
+                <label name='tag' value='@post'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1620461743465' status='passed' stop='1620461745113'>
+                    <name>Given I send POST HTTP request to user api endpoint for "&lt;Empty>", "thaiscastro@mail.com", "Female" and "Active" </name>
+                    <title>Given I send POST HTTP request to user api endpoint for "&lt;Empty>", "thaiscastro@mail.com", "Female" and "Active" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1620461743465' status='passed' stop='1620461745112'>
+                            <name>I send post request "/users", {"name":"","email":"thaiscastro@mail.com","gender":"Female","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</name>
+                            <title>I send post request "/users", {"name":"","email":"thaiscastro@mail.com","gender":"Female","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1620461745114' status='passed' stop='1620461746754'>
+            <name>Add user information {"name":"Thaís Castro","email":"&lt;Empty>","gender":"Female","status":"Active","code":"200","bodyCode":"422","message":"can't be blank"}</name>
+            <title>Add user information {"name":"Thaís Castro","email":"&lt;Empty>","gender":"Female","status":"Active","code":"200","bodyCode":"422","message":"can't be blank"}</title>
+            <labels>
+                <label name='tag' value='@post'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1620461745115' status='passed' stop='1620461746754'>
+                    <name>Given I send POST HTTP request to user api endpoint for "Thaís Castro", "&lt;Empty>", "Female" and "Active" </name>
+                    <title>Given I send POST HTTP request to user api endpoint for "Thaís Castro", "&lt;Empty>", "Female" and "Active" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1620461745115' status='passed' stop='1620461746753'>
+                            <name>I send post request "/users", {"name":"Thaís Castro","email":"","gender":"Female","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</name>
+                            <title>I send post request "/users", {"name":"Thaís Castro","email":"","gender":"Female","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1620461746756' status='passed' stop='1620461748482'>
+            <name>Add user information {"name":"Letícia Rodrigues","email":"leticiarodr@mail.com","gender":"&lt;Empty>","status":"Active","code":"200","bodyCode":"422","message":"can't be blank"}</name>
+            <title>Add user information {"name":"Letícia Rodrigues","email":"leticiarodr@mail.com","gender":"&lt;Empty>","status":"Active","code":"200","bodyCode":"422","message":"can't be blank"}</title>
+            <labels>
+                <label name='tag' value='@post'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1620461746756' status='passed' stop='1620461748482'>
+                    <name>Given I send POST HTTP request to user api endpoint for "Letícia Rodrigues", "leticiarodr@mail.com", "&lt;Empty>" and "Active" </name>
+                    <title>Given I send POST HTTP request to user api endpoint for "Letícia Rodrigues", "leticiarodr@mail.com", "&lt;Empty>" and "Active" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1620461746756' status='passed' stop='1620461748481'>
+                            <name>I send post request "/users", {"name":"Letícia Rodrigues","email":"leticiarodr@mail.com","gender":"","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</name>
+                            <title>I send post request "/users", {"name":"Letícia Rodrigues","email":"leticiarodr@mail.com","gender":"","status":"Active"}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1620461748483' status='passed' stop='1620461750131'>
+            <name>Add user information {"name":"Douglas Araujo","email":"douglasarjo@mail.com","gender":"Male","status":"&lt;Empty>","code":"200","bodyCode":"422","message":"can't be blank"}</name>
+            <title>Add user information {"name":"Douglas Araujo","email":"douglasarjo@mail.com","gender":"Male","status":"&lt;Empty>","code":"200","bodyCode":"422","message":"can't be blank"}</title>
+            <labels>
+                <label name='tag' value='@post'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1620461748484' status='passed' stop='1620461750131'>
+                    <name>Given I send POST HTTP request to user api endpoint for "Douglas Araujo", "douglasarjo@mail.com", "Male" and "&lt;Empty>" </name>
+                    <title>Given I send POST HTTP request to user api endpoint for "Douglas Araujo", "douglasarjo@mail.com", "Male" and "&lt;Empty>" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1620461748484' status='passed' stop='1620461750129'>
+                            <name>I send post request "/users", {"name":"Douglas Araujo","email":"douglasarjo@mail.com","gender":"Male","status":""}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</name>
+                            <title>I send post request "/users", {"name":"Douglas Araujo","email":"douglasarjo@mail.com","gender":"Male","status":""}, {"Authorization":"Bearer ce994f06659fab6dd300540304fd40345a6284f8e0e8c1b0a602dae5b4c09cd3 "}</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
