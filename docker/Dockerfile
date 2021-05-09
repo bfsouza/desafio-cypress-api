@@ -6,6 +6,8 @@ COPY docker/run-tests.sh /app/docker/
 COPY features /app/features
 COPY pages /app/pages
 COPY step_definitions /app/step_definitions
+COPY utils /app/utils
+COPY steps_file.sh /app/
 
 WORKDIR /app
 RUN npm install

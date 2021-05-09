@@ -5,6 +5,9 @@ exports.config = {
     },    
     ChaiWrapper : {
       require: "codeceptjs-chai"
+    },
+    Helper: {
+      require: "./utils/helper.js"
     }
   },
   include: {

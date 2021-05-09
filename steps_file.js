@@ -1,29 +1,60 @@
 const { I } = inject();
+const faker = require('faker');
 const token = process.env.accessToken;
-const util = require('util');
+var usersToDelete = null;
 
 module.exports = function() {
   return actor({
+    async addUserToDelete(id){      
+      usersToDelete = id;
+    },
 
-    async handleUser(name, email){
-      deleted = false;
-      const body = {
-        "name" : name,
-        "email" : email,
-        "gender" : "Female",
-        "status" : "Active"
-      };
+    async getUsersToDelete(){
+      return usersToDelete;
+    },
 
-      const json_body = JSON.parse(JSON.stringify(body));
-      let res = await I.sendPostRequest('/users', json_body, { "Authorization": "Bearer " + token});
+    async handleUser(){
+      const resInsert = await I.insertUser();
+         
+      if(resInsert != null){
+        const resDelete = await I.deleteUser(resInsert.data.data.id);
 
-      if(res.status == "200" && res.data.code == "201"){        
-        res = await I.sendDeleteRequest('/users/' + res.data.data.id,  { "Authorization": "Bearer " + token});
-        if(res.status == "200" && res.data.code == "204"){                                 
-          return res;
+        if(resDelete != null){
+          if(resDelete.status == "200" && resDelete.data.code == "204"){                                 
+            return resDelete;
+          }
         }
       }      
       return null;
+    },
+
+    async insertUser(req_body = null){
+
+      let json_body;
+      
+      if(req_body == null){
+        const genders = ['Female','Male'];      
+        const gender = faker.random.arrayElement(genders);
+        const name = faker.name.firstName(gender);      
+        const email = faker.internet.email();
+  
+        const body = {
+          "name" : name,
+          "email" : email,
+          "gender" : gender,
+          "status" : "Active"
+        };
+  
+        json_body = JSON.parse(JSON.stringify(body));
+      } else {
+        json_body = req_body;
+      }
+      
+      return await I.sendPostRequest('/users', json_body, { "Authorization": "Bearer " + token});
+    },
+
+    async deleteUser(id){            
+      return await I.sendDeleteRequest('/users/' + id,  { "Authorization": "Bearer " + token});;
     }
   });
 }
